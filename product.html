@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+    .product a {
+      text-decoration: none;
+      color: #333;
+    }
+    .product-name {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .product-price {
+      margin-top: 5px;
+    }
+
+    /* navbar */
+    .navbar {
+      -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand img {
+      width: 30px;
+    }
+    .navbar-brand span {
+      letter-spacing: 2px;
+      font-family: var(--lg-font);
+    }
+    .nav-link:hover {
+      color: var(--pink)!important;
+    }
+    .nav-item {
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+    }
+
+    /* Footer */
+    footer .brand {
+      font-family: var(--lg-font);
+      letter-spacing: 2px;
+    }
+    footer a {
+      -webkit-transition: color 0.3s ease;
+      -o-transition: color 0.3s ease;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: var(--pink)!important;
+    }
+
+    /* media queries */
+    @media (min-width: 992px) {
+      .nav-item {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product">
+        <a href="Alps.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/CALACATTA_SERIES_ALPS/DSC03499.JPG" alt="Product 1">
+          <div class="product-name">ALPS</div>
+          <div class="product-price">45*45</div>
+        </a>
+      </div>
+      <!-- Product 2 -->
+      <div class="product">
+        <a href="antique_blue.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/ANTIQUE BLUE/1(1).jpg" alt="Product 2">
+          <div class="product-name">ANTIQUE BLUE</div>
+          <div class="product-price">66*88</div>
+        </a>
+      </div>
+      <!-- Product 3 -->
+      <div class="product">
+        <a href="artery.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/Artery/IMG_1588.JPG" alt="Product 3">
+          <div class="product-name">ARTERY</div>
+          <div class="product-price">78*96</div>
+        </a>
+      </div>
+      <div class="product">
+        <a href="black_bamboo.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/BLACK BAMBOO/DSC05673.JPG" alt="Product 4">
+          <div class="product-name">BLACK BAMBOO</div>
+          <div class="product-price">25*63</div>
+        </a>
+      </div>
+      <!-- Product 2 -->
+      <div class="product">
+        <a href="black_ferrari.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/BLACK FERRARI/WhatsApp Image 2023-01-13 at 5.09.36 PM.jpeg" alt="Product 5">
+          <div class="product-name">BLACK FERRARI</div>
+          <div class="product-price">69*25</div>
+        </a>
+      </div>
+      <!-- Product 3 -->
+      <div class="product">
+        <a href="borogini.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/BOROGINI/DSC05696.JPG" alt="Product 6">
+          <div class="product-name">BOROGINI</div>
+          <div class="product-price">45*56</div>
+        </a>
+      </div>
+      <div class="product">
+        <a href="calacatta_cosmos.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/CALACATTA COSMOS/PHOTO-2023-12-28-18-20-58(4).jpg" alt="Product 5">
+          <div class="product-name">CALACATTA COSMOS</div>
+          <div class="product-price">12*23</div>
+        </a>
+      </div>
+      <!-- Product 3 -->
+      <div class="product">
+        <a href="calacatta_oro.html">
+          <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/CALACATTA ORO/jpegmini_optimized/IMG_2214.jpg" alt="Product 6">
+          <div class="product-name">CALACATTA ORO</div>
+          <div class="product-price">65*96</div>
+        </a>
+      </div>
+      <!-- Repeat this structure for more products -->
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Product Card/Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/product_description.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <div class="card-wrapper">
+    <div class="card">
+      <!-- card left -->
+      <div class="product-imgs">
+        <div class="img-display">
+          <button type="button" class="btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+          <div class="img-showcase">
+            <img src="All PRODUCTS 2024-20240513T045237Z-002/All PRODUCTS 2024/CALACATTA SERIES/Artery/IMG_1588.JPG" alt="quartz image">
+          </div>
+          <button type="button" class="btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <!-- card right -->
+      <div class="product-content">
+        <h2 class="product-title">ARTERY</h2>
+        <a href="#" class="product-link" id="seeMoreProducts">see more products</a>
+        <div class="product-detail">
+          <div class="description-container">
+            <h2>about this item: </h2>
+            <p>Appearance: The Calacatta Series Alps stone features a white or off-white background with striking
+              veining patterns in shades of grey and gold. The veins are often bold and dramatic, adding depth and
+              elegance to the stone's overall appearance. This stone is renowned for its resemblance to luxurious
+              marble.</p>
+            <p>Texture: It typically has a smooth and polished surface, enhancing its reflective properties and giving
+              it a luxurious feel. The texture may vary slightly depending on the specific cut and finish of the stone.
+            </p>
+            <p>Durability: Like other natural stones, Calacatta Series Alps is known for its durability and longevity.
+              It is resistant to scratches, stains, and heat, making it suitable for various applications both indoors
+              and outdoors.</p>
+          </div>
+          <ul>
+            <li>Color: <span>White</span></li>
+            <li>Available: <span>in stock</span></li>
+            <li>Category: <span>Quartz</span></li>
+            <li>Shipping Area: <span>All over the world</span></li>
+            <li>Shipping Fee: <span>Free</span></li>
+          </ul>
+        </div>
+        <p>Do you like this product?</p>
+        <button class="like-btn"><i class="fas fa-heart"></i> Like</button>
+        <div class="previous-likes" id="likesCount">123 likes</div>
+        <div class="purchase-info">
+          <button type="button" class="btn" id="visualizationBtn">Visualize in 3-D</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <button id="visualizeKitchenBtn">Visualize in Your Own Space</button>
+      <button id="goToProductPageBtn">Visualize in Model Kitchen </button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const visualizationBtn = document.getElementById('visualizationBtn');
+        const modal = document.getElementById("myModal");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const visualizeKitchenBtn = document.getElementById('visualizeKitchenBtn');
+
+        visualizationBtn.addEventListener('click', function() {
+            modal.style.display = "block";
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        visualizeKitchenBtn.addEventListener('click', function() {
+            window.location.href = 'https://3dview.app/860589/kitchen';
+            modal.style.display = "none";
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the like button element
+        const likeBtn = document.querySelector('.like-btn');
+
+        // Get the element that displays the number of likes
+        const likesCount = document.getElementById('likesCount');
+
+        // Initialize unique page identifier
+        const pageIdentifier = window.location.href;
+
+        // Initialize likes count for this page from localStorage or set to 10 if not present
+        let currentLikes = localStorage.getItem(pageIdentifier);
+        currentLikes = currentLikes ? parseInt(currentLikes) : 10;
+
+        // Set initial like state
+        let liked = false;
+
+        // Update the likes count display
+        likesCount.innerText = currentLikes + " likes";
+
+        // Add click event listener to the like button
+        likeBtn.addEventListener('click', function() {
+            if (!liked) {
+                // Increase the number of likes
+                currentLikes++;
+                // Update the likes count display
+                likesCount.innerText = currentLikes + " likes";
+                // Change the style of the like button to indicate it's been clicked
+                likeBtn.style.color = "red";
+                // Update the like state
+                liked = true;
+            } else {
+                // Decrease the number of likes
+                currentLikes--;
+                // Update the likes count display
+                likesCount.innerText = currentLikes + " likes";
+                // Change the style of the like button to indicate it's been unclicked
+                likeBtn.style.color = "black";
+                // Update the like state
+                liked = false;
+            }
+            // Store the updated likes count in localStorage for this page
+            localStorage.setItem(pageIdentifier, currentLikes);
+        });
+    });
+  </script>
+  <script src="js/product_description.js"></script>
+</body>
+
+</html>

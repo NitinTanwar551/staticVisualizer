@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    line-height: 1.5;
+}
+
+.card-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.img-display {
+    overflow: hidden;
+    margin-top: 1000px; /* Adjust this value as needed */
+    position: relative;
+}
+
+
+.img-showcase {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+    padding: 0 20px; /* Adjust the padding value as needed */
+}
+
+
+.img-showcase img {
+    min-width: 100%;
+}
+
+.img-select {
+    display: flex;
+}
+
+.img-item {
+    margin: 0.3rem;
+}
+
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3) {
+    margin-right: 0;
+}
+
+.img-item:hover {
+    opacity: 0.8;
+}
+
+.product-content {
+    padding: 2rem 1rem;
+}
+
+.product-title {
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+.product-title::after {
+    content: "";
+    position: absolute;
+    left: 50%; /* Set the left position to the center */
+    transform: translateX(-50%); /* Move the element back by half its width */
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+
+
+.product-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+
+.product-link:hover {
+    opacity: 0.9;
+}
+
+.product-rating {
+    color: #ffc107;
+}
+
+.product-rating span {
+    font-weight: 600;
+    color: #252525;
+}
+
+.product-price {
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.product-price span {
+    font-weight: 400;
+}
+
+.last-price span {
+    color: #f64749;
+    text-decoration: line-through;
+}
+
+.new-price span {
+    color: #256eff;
+}
+
+.product-detail h2 {
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+
+.product-detail p {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+
+.product-detail ul {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.product-detail ul li {
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.product-detail ul li span {
+    font-weight: 400;
+}
+
+.purchase-info {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.purchase-info input,
+.purchase-info .btn {
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 1.5rem 3rem; /* Increase padding for larger button */
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Increase font size for larger button */
+    cursor: pointer;
+    color: #fff;
+    background-color: #256eff;
+    transition: all 0.5s ease;
+}
+
+.purchase-info .btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05); /* Optional: Add a slight scale effect on hover */
+}
+
+.purchase-info input {
+    width: 60px;
+}
+
+.purchase-info .btn {
+    cursor: pointer;
+    color: #fff;
+}
+
+.purchase-info .btn:first-of-type {
+    background: #256eff;
+}
+
+.purchase-info .btn:last-of-type {
+    background: #f64749;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+    .card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+  
+    .card-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .product-imgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  
+    .product-content {
+        padding-top: 0;
+        grid-column: span 2; /* Ensure product content spans full row */
+    }
+  
+    /* Add styling for the description container */
+    .description-container {
+        max-height: 200px; /* Adjust as needed */
+        overflow-y: auto; /* Enable vertical scrollbar */
+    }
+}
+
+
+/* Navbar styling */
+.navbar {
+    background-color: #343a40; /* Background color */
+}
+
+.navbar-brand {
+    color: #ffffff; /* Text color */
+    font-weight: bold; /* Font weight */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* Text color */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* Text color on hover */
+}
+
+.navbar-toggler {
+    border-color: #ffffff; /* Border color */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Icon color */
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-item {
+        margin-bottom: 10px; /* Adjust spacing between nav items */
+    }
+}
+@media screen and (min-width: 992px) {
+    .card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+  
+    .card-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .product-imgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  
+    .product-content {
+        padding-top: 0;
+    }
+  
+    /* Add styling for the description container */
+    .description-container {
+        max-height: 200px; /* Adjust as needed */
+        overflow: hidden; /* Hide overflow content */
+    }
+    
+  
+    /* Ensure product images take full row width */
+    .product-imgs {
+        grid-column: span 2;
+        position: relative;
+    }
+  }
+
+
+  .prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px; /* Increase padding to increase button size */
+    z-index: 1; /* Ensure buttons are above images */
+    font-size: 20px; /* Increase font size for button content */
+}
+
+.prev-btn {
+    left: 10px; /* Adjust the distance from the left side */
+}
+
+.next-btn {
+    right: 10px; /* Adjust the distance from the right side */
+}
+
+
+
+.like-btn {
+    background: none;
+    border: none;
+    color: #888; /* Default color for unliked button */
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.like-btn:hover {
+    color: #f64749; /* Color when hovered */
+}
+
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.3); /* Black w/ opacity (adjust alpha value for transparency) */
+}
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Modal button styles */
+  .modal-content button {
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    padding: 1.5rem 3rem; /* Increase padding for larger button */
+    outline: 0;
+    margin-bottom: 1rem;
+    font-size: 1.8rem; /* Increase font size for larger button */
+    cursor: pointer;
+    color: #fff;
+    background-color: #f64749; /* Button color */
+    transition: all 0.5s ease;
+}
+
+.modal-content button:hover {
+    opacity: 0.9;
+    transform: scale(1.05); /* Optional: Add a slight scale effect on hover */
+}
